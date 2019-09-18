@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>5e Quick Monster</title>
+	<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<h1>D&D 5e Quick Monster Generator</h1>
+			<h4>Based off of analysis by <a href="http://blogofholding.com/?p=7338" target="_blank">bagofholding.com</a></h4>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<div class="card">
+				<div class="card-body">
+					<h2>Options</h2>
+					<form id="monsterForm" class="needs-validation" novalidate>
+						<div class="form-group">
+							<label for="monsterName">Monster Name</label>
+							<input id="monsterName" type="text" class="form-control" placeholder="Enter Monster Name" required="required" />
+							<div class="invalid-feedback">
+								Please enter a name.
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="crSelect">Select CR</label>
+							<select class="form-control" id="crSelect" required="required">
+								<option value="" disabled="disabled" selected="selected">Select CR</option>
+							</select>
+							<div class="invalid-feedback">
+								Please select a monster CR.
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="modifier">Select Modifier</label>
+							<select class="form-control" id="modifier">
+								<option>Standard</option>
+								<option>Weakened</option>
+								<option>Strengthened</option>
+							</select>
+						</div>
+
+						<div class="form-group form-check">
+							<input type="checkbox" class="form-check-input" id="highMagicBoost">
+							<label class="form-check-label" for="highMagicBoost">Check this box to add magic item bonuses to account for high-magic setting</label>
+						</div>
+
+						<div class="form-group">
+							<label for="atkPerRnd">Number of attacks per round</label>
+							<input id="atkPerRnd" type="number" class="form-control" placeholder="Enter Number of Attacks per Round" required="required" min="1" />
+							<div class="invalid-feedback">
+								Monster must have at least 1 attack per round.
+							</div>
+						</div>
+
+						<button id="generateMonsterBtn" type="button" class="btn btn-primary btn-block">Generate</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="col">
+			<div class="card">
+				<div class="card-body">
+					<h2>Monster</h2>
+					<div>
+						<span style="font-weight: bold;">Name: </span>
+						<span id="renderMonsterName">N/A</span>
+					</div>
+
+					<div>
+						<span style="font-weight: bold;">CR: </span>
+						<span id="renderMonsterCR">N/A</span>
+					</div>
+
+					<div>
+						<span style="font-weight: bold;">HP: </span>
+						<span id="renderMonsterHP">0</span>
+					</div>
+
+					<div>
+						<span style="font-weight: bold;">AC: </span>
+						<span id="renderMonsterAC">0</span>
+					</div>
+
+					<div>
+						<span style="font-weight: bold;">Attacks per Round: </span>
+						<span id="renderMonsterAttacks">0</span>
+					</div>
+
+					<div>
+						<span style="font-weight: bold;">To Hit: </span>
+						<span id="renderMonsterAtkBonus">0</span>
+					</div>
+
+					<div>
+						<span style="font-weight: bold;">Dmg per Hit: </span>
+						<span id="renderMonsterDmg">0</span>
+					</div>
+
+					<div>
+						<span style="font-weight: bold;">Save DC: </span>
+						<span id="renderMonsterDC">0</span>
+					</div>
+
+					<div>
+						<span style="font-weight: bold;">Saving Throw Bonus: </span>
+						<span id="renderMonsterSave">0</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" style="margin-top: 16px;">
+		<div class="col">
+
+			<div class="accordion" id="accordionParent">
+				<div class="card">
+					<div class="card-header" id="headingTwo">
+						<h2 class="mb-0">
+							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" data-parent="#accordionParent">
+								Potential Damage Dice Rolls
+							</button>
+						</h2>
+					</div>
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+						<div class="card-body" id="damageRollsBody">
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th scope="col">Roll</th>
+										<th scope="col">Dice</th>
+										<th scope="col">Amount</th>
+										<th scope="col">Average</th>
+										<th scope="col">Required Bonus</th>
+									</tr>
+								</thead>
+								<tbody id="potentialDiceRollsTableBody">
+									<tr>
+
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script type="text/javascript" src="resources/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="resources/js/app.js"></script>
+</body>
+</html>
