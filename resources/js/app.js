@@ -414,7 +414,7 @@ function render(monster) {
 	document.getElementById("renderMonsterAC").innerText = monster.ac;
 	document.getElementById("renderMonsterAttacks").innerText = monster.attacksPerRound;
 	document.getElementById("renderMonsterAtkBonus").innerText = monster.toHit;
-	document.getElementById("renderMonsterDmg").innerText = monster.damagePerHit;
+	document.getElementById("renderMonsterDmg").innerText = Math.floor(monster.damagePerHit).toString();
 	document.getElementById("renderMonsterDC").innerText = monster.saveDC;
 	document.getElementById("renderMonsterSave").innerText = monster.savingThrow;
 
@@ -434,7 +434,7 @@ function generatePotentialDamageRolls(dmgPerHit) {
 			var k = keys[i];
 				var average = SINGLE_DICE_AVG[k];
 				var multipliedAvg = average * diceMultiplier;
-				var staticBonus = dmgPerHit - Math.floor(multipliedAvg);
+				var staticBonus = Math.floor(dmgPerHit - Math.floor(multipliedAvg));
 
 				// escape early case
 				if(staticBonus < 0) {
