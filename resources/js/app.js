@@ -410,7 +410,7 @@ function convertCrStringToNumber(cr) {
 function render(monster) {
 	document.getElementById("renderMonsterName").innerText = monster.name;
 	document.getElementById("renderMonsterCR").innerText = monster.cr;
-	document.getElementById("renderMonsterHP").innerText = monster.hp;
+	document.getElementById("renderMonsterHP").innerText = Math.floor(monster.hp).toString();
 	document.getElementById("renderMonsterAC").innerText = monster.ac;
 	document.getElementById("renderMonsterAttacks").innerText = monster.attacksPerRound;
 	document.getElementById("renderMonsterAtkBonus").innerText = monster.toHit;
