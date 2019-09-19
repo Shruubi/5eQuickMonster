@@ -4,6 +4,15 @@
 	<meta charset="UTF-8">
 	<title>5e Quick Monster</title>
 	<link rel="stylesheet" href="resources/css/bootstrap.min.css">
+	<link rel="stylesheet" href="resources/css/datatables.min.css">
+	<link rel="stylesheet" href="resources/css/dataTables.bootstrap4.min.css">
+	<style type="text/css">
+		@media screen and (max-width: 768px) {
+			.monster-block {
+				margin-top: 16px;
+			}
+		}
+	</style>
 </head>
 <body>
 <div class="container">
@@ -15,7 +24,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col">
+		<div class="col-sm-12 col-md-6">
 			<div class="card">
 				<div class="card-body">
 					<h2>Options</h2>
@@ -66,7 +75,7 @@
 			</div>
 		</div>
 
-		<div class="col">
+		<div class="col-sm-12 col-md-6 monster-block">
 			<div class="card">
 				<div class="card-body">
 					<h2>Monster</h2>
@@ -131,7 +140,7 @@
 							</button>
 						</h2>
 					</div>
-					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionParent">
 						<div class="card-body" id="damageRollsBody">
 							<table class="table table-striped">
 								<thead>
@@ -152,6 +161,22 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="card">
+					<div class="card-header" id="headingThree">
+						<h2 class="mb-0">
+							<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								Available Monster Traits
+							</button>
+						</h2>
+					</div>
+					<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionParent">
+						<div class="card-body">
+							<table class="table table-striped" id="monsterTraits">
+							</table>
+						</div>
+					</div>
+				</div>
 			</div>
 
 		</div>
@@ -160,6 +185,8 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script type="text/javascript" src="resources/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="resources/js/datatables.min.js"></script>
+<script type="text/javascript" src="resources/js/dataTables.bootstrap4.min.js"></script>
 <script type="text/javascript" src="resources/js/app.js"></script>
 </body>
 </html>
